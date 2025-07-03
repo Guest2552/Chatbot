@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Financial Advisor - Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(120deg, #002147, #004080);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        .form-box {
+            background-color: #ffffff22;
+            padding: 30px;
+            border-radius: 12px;
+            width: 500px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #ffcc00;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"] {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        input[type="submit"] {
+            background-color: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        a {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            color: #ccc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h2>Hello, {{ user }} 👋</h2>
+        <form method="POST">
+            <label>Goal Description</label>
+            <input type="text" name="goal_description" required>
+
+            <label>Goal Amount</label>
+            <input type="number" name="goal_amount" required>
+
+            <label>Goal Progress (%)</label>
+            <input type="number" name="goal_progress_pct" required>
+
+            <label>Days Left</label>
+            <input type="number" name="days_left" required>
+
+            <input type="submit" value="Generate Strategy">
+        </form>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>
